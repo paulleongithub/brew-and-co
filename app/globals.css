@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/**
+ * Brew & Co — Design Tokens (Tailwind CSS v4, CSS-first config)
+ * Source: docs/design/tokens/tokens.css — see docs/design/02-design-tokens.md
+ * for the usage/contrast tables. No tailwind.config.js needed.
+ */
+@theme {
+  /* ---------- Color: neutral surfaces ---------- */
+  --color-cream: #f3ece0; /* page background — warm cream, like milk foam */
+  --color-crema: #fbf6ec; /* elevated surface — cards, inputs, search bar */
+
+  /* ---------- Color: "espresso" ramp (warm ink, not cold gray) ---------- */
+  --color-espresso-950: #1a1310; /* primary text, primary buttons, dark panels */
+  --color-espresso-800: #3a2e27; /* secondary text */
+  --color-espresso-600: #6b584b; /* tertiary text / inactive icons */
+  --color-espresso-400: #9c8879; /* placeholders, highlight borders */
+  --color-espresso-200: #d8cbbd; /* borders, dividers */
+  --color-espresso-100: #ede4d8; /* subtle fills, surface hover */
+
+  /* ---------- Color: brand accents ---------- */
+  --color-rust: #d96b3b; /* primary accent — "roast"; CTAs, highlights, hero disc */
+  --color-rust-600: #b85428; /* primary accent hover/active */
+  --color-moss: #4b5e45; /* secondary accent — coffee leaf; tags, success, rewards */
+  --color-moss-600: #37432f; /* secondary accent hover/active */
+  --color-honey: #e8a93c; /* tertiary accent — ratings, highlights on dark backgrounds */
+  --color-danger: #c0392b; /* error / destructive states */
+
+  /* ---------- Typography ---------- */
+  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 0.625rem; /* 10px — small inputs, chips */
+  --radius-card: 1.75rem; /* 28px — product cards, panels */
+  --radius-pill: 999px; /* buttons, search bar, badges */
+
+  /* ---------- Shadow (espresso-tinted, never pure gray) ---------- */
+  --shadow-warm-sm: 0 4px 10px -4px rgb(26 19 16 / 0.15);
+  --shadow-warm-md: 0 20px 40px -16px rgb(26 19 16 / 0.22);
+  --shadow-warm-lg: 0 28px 60px -20px rgb(26 19 16 / 0.3);
+
+  /* ---------- Motion ---------- */
+  --ease-brew: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+  --duration-slow: 420ms;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Semantic aliases — prefer these in application code (see 02-design-tokens.md). */
+@theme {
+  --color-surface: var(--color-cream);
+  --color-surface-raised: var(--color-crema);
+  --color-ink: var(--color-espresso-950);
+  --color-ink-muted: var(--color-espresso-600);
+  --color-border: var(--color-espresso-200);
+  --color-accent: var(--color-rust);
+  --color-accent-hover: var(--color-rust-600);
+  --color-success: var(--color-moss);
+  --color-rating: var(--color-honey);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-espresso-950);
+  font-family: var(--font-body);
+}
+
+/* Variable-font display axes for large hero headlines — style guide §3. */
+.display-hero {
+  font-variation-settings:
+    "opsz" 72,
+    "SOFT" 0,
+    "WONK" 1;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-rust);
+  outline-offset: 2px;
+}
+
+/* Dark panels (CTAPanel, Footer) need a honey ring to keep AA contrast on espresso-950. */
+.on-dark :focus-visible,
+.on-dark:focus-visible {
+  outline-color: var(--color-honey);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

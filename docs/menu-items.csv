@@ -1,0 +1,21 @@
+category,name,description,price,badge
+"Espresso","Espresso Curto","Tiro duplo de espresso, crema densa e final encorpado.",6.50,
+"Espresso","Espresso Longo","Espresso alongado com água quente, resultado mais suave e aromático.",7.00,
+"Espresso","Cappuccino Clássico","Espresso, leite vaporizado e uma camada generosa de espuma.",12.90,popular
+"Espresso","Latte Baunilha","Espresso com leite vaporizado e xarope de baunilha artesanal.",14.50,
+"Espresso","Mocha Belga","Espresso, chocolate belga derretido e leite vaporizado, finalizado com chantilly.",15.90,favorito da casa
+"Espresso","Macchiato Caramelo","Espresso marcado com espuma de leite e um fio de caramelo salgado.",13.90,
+"Confeitaria","Pão de Queijo Artesanal","Pão de queijo mineiro, casquinha crocante e miolo macio.",7.50,popular
+"Confeitaria","Croissant de Manteiga","Croissant folhado e amanteigado, assado na hora.",9.90,
+"Confeitaria","Bolo de Cenoura com Chocolate","Fatia generosa de bolo de cenoura fofinho com cobertura de chocolate meio amargo.",11.50,favorito da casa
+"Confeitaria","Coxinha de Frango","Salgado crocante recheado com frango desfiado e catupiry.",8.90,
+"Confeitaria","Torta de Limão","Base amanteigada, creme de limão siciliano e merengue maçaricado.",13.90,
+"Sanduíches","Baguete de Presunto e Brie","Baguete crocante com presunto de parma, queijo brie e rúcula.",18.90,
+"Sanduíches","Croque Monsieur","Pão de forma artesanal, presunto, queijo gruyère gratinado e molho bechamel.",21.90,popular
+"Sanduíches","Sanduíche de Grão-de-Bico","Homus de grão-de-bico, tomate seco, rúcula e queijo minas no pão australiano.",17.50,
+"Sanduíches","Club Sandwich Brew & Co","Frango grelhado, bacon, ovo, alface e tomate em três camadas de pão de forma.",24.90,favorito da casa
+"Bebidas Geladas","Cold Brew Original","Café extraído a frio por 16 horas, suave e naturalmente adocicado.",13.90,popular
+"Bebidas Geladas","Frappé de Caramelo","Café gelado batido com leite, caramelo e cobertura de chantilly.",16.90,
+"Bebidas Geladas","Chá Gelado de Pêssego","Chá preto gelado, xarope de pêssego e folhas de hortelã.",10.90,
+"Bebidas Geladas","Limonada Suíça","Limão espremido na hora, leite condensado e gelo triturado.",11.90,
+"Bebidas Geladas","Iced Latte de Coco","Espresso, leite de coco gelado e um toque de baunilha.",15.90,favorito da casa

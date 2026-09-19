@@ -1,0 +1,70 @@
+/**
+ * Brew & Co — Design Tokens (Tailwind CSS v4, CSS-first config)
+ *
+ * Como usar: cole o bloco `@theme` abaixo dentro de app/globals.css,
+ * depois de `@import "tailwindcss";` — o Tailwind v4 gera as utilities
+ * automaticamente (bg-rust, text-espresso-950, rounded-card, font-display...).
+ * Não é necessário tailwind.config.js.
+ *
+ * Ver docs/design/02-design-tokens.md para a tabela de uso e contraste.
+ */
+
+@theme {
+  /* ---------- Cor: superfícies neutras ---------- */
+  --color-cream: #f3ece0;      /* fundo de página — creme quente (espuma de leite) */
+  --color-crema: #fbf6ec;      /* superfície elevada — cards, inputs, barra de busca */
+
+  /* ---------- Cor: rampa "espresso" (tinta quente, não cinza frio) ---------- */
+  --color-espresso-950: #1a1310; /* texto principal, botões primários, painéis escuros */
+  --color-espresso-800: #3a2e27; /* texto secundário */
+  --color-espresso-600: #6b584b; /* texto terciário / ícones inativos */
+  --color-espresso-400: #9c8879; /* placeholders, bordas de destaque */
+  --color-espresso-200: #d8cbbd; /* bordas, divisores */
+  --color-espresso-100: #ede4d8; /* fills sutis, hover de superfície */
+
+  /* ---------- Cor: acentos da marca ---------- */
+  --color-rust: #d96b3b;       /* acento primário — "torra"; CTAs, destaques, disco do hero */
+  --color-rust-600: #b85428;   /* hover/active do acento primário */
+  --color-moss: #4b5e45;       /* acento secundário — folha de café; tags, sucesso, rewards */
+  --color-moss-600: #37432f;   /* hover/active do acento secundário */
+  --color-honey: #e8a93c;      /* acento terciário — avaliações, destaques sobre fundo escuro */
+  --color-danger: #c0392b;     /* erro / estados destrutivos */
+
+  /* ---------- Tipografia ---------- */
+  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  /* ---------- Raio ---------- */
+  --radius-sm: 0.625rem;   /* 10px — inputs pequenos, chips */
+  --radius-card: 1.75rem;  /* 28px — cards de produto, painéis */
+  --radius-pill: 999px;    /* botões, barra de busca, badges */
+
+  /* ---------- Sombra (tingida de espresso, não cinza puro) ---------- */
+  --shadow-warm-sm: 0 4px 10px -4px rgb(26 19 16 / 0.15);
+  --shadow-warm-md: 0 20px 40px -16px rgb(26 19 16 / 0.22);
+  --shadow-warm-lg: 0 28px 60px -20px rgb(26 19 16 / 0.30);
+
+  /* ---------- Movimento ---------- */
+  --ease-brew: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+  --duration-slow: 420ms;
+}
+
+/*
+ * Aliases semânticos opcionais (mapeiam intenção → token de marca).
+ * Mantêm o vocabulário do produto desacoplado da paleta, caso a marca
+ * mude no futuro. Adicione ao mesmo bloco @theme se forem adotados.
+ */
+@theme {
+  --color-surface: var(--color-cream);
+  --color-surface-raised: var(--color-crema);
+  --color-ink: var(--color-espresso-950);
+  --color-ink-muted: var(--color-espresso-600);
+  --color-border: var(--color-espresso-200);
+  --color-accent: var(--color-rust);
+  --color-accent-hover: var(--color-rust-600);
+  --color-success: var(--color-moss);
+  --color-rating: var(--color-honey);
+}
