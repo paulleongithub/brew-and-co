@@ -27,7 +27,7 @@ export function Footer() {
             <br />
             Saturday: 8:00am – 5:00pm
             <br />
-            Sunday: 9:00am – 3:00pm
+            Sunday: 8:00am – 5:00pm
           </p>
         </div>
 
